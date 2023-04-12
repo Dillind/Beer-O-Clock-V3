@@ -6,13 +6,14 @@ html,
 body,
 #root,
 .app {
+  background: #f1f1f1;
   margin: 0;
   height: 100%;
   width: 100%;
   font-family: "Inter", sans-serif;
 }
 
-/* layout */
+/* navbar layout */
 header {
   background: #fff;
 }
@@ -29,10 +30,35 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+/* change it to that underline version in BeerV2 */
+header li:hover {
+  background-color: #999;
 }
 
 .pages {
   max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   margin: 0 auto;
 }
