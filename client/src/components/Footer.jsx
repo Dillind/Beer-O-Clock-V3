@@ -4,8 +4,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container">
-        <h1>FOOOTER</h1>
+        <h1>FOOTER</h1>
       </div>
     </div>
   );
 };
+
+export default Footer;
