@@ -22,9 +22,16 @@ const getBeer = async (req, res) => {
 
 // create a new beer
 const createBeer = async (req, res) => {
-  const { brand, origin, description } = req.body;
+  const { brand, variation, origin, state, image, description } = req.body;
   try {
-    const beer = await Beer.create({ brand, origin, description });
+    const beer = await Beer.create({
+      brand,
+      variation,
+      origin,
+      state,
+      image,
+      description,
+    });
     res.status(200).json(beer);
   } catch (error) {
     res.status(400).json({ error: error.message });
