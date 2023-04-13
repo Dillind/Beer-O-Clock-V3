@@ -62,3 +62,24 @@ header li:hover {
   padding: 20px;
   margin: 0 auto;
 }
+
+/* footer layout */
+
+.footer {
+  background-color: #fff;
+  bottom: 0;
+  position: absolute;
+  width: 100%
+}
+
+.footer .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.footer h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
