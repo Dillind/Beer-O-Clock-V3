@@ -5,8 +5,14 @@ const Schema = mongoose.Schema;
 const beerSchema = new Schema(
   {
     brand: {
-      type: String,
-      required: true,
+      name: {
+        type: String,
+        required: true,
+      },
+      brand_url: {
+        type: String,
+        required: true,
+      },
     },
     variation: {
       type: String,
