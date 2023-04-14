@@ -22,7 +22,20 @@ const getBeer = async (req, res) => {
 
 // create a new beer
 const createBeer = async (req, res) => {
-  const { brand, variation, origin, state, image, description } = req.body;
+  const {
+    brand,
+    variation,
+    origin,
+    state,
+    image,
+    description,
+    size,
+    size_unit,
+    standard_drinks,
+    alcohol_volume,
+    closure,
+    beer_style,
+  } = req.body;
   try {
     const beer = await Beer.create({
       brand,
@@ -31,6 +44,12 @@ const createBeer = async (req, res) => {
       state,
       image,
       description,
+      size,
+      size_unit,
+      standard_drinks,
+      alcohol_volume,
+      closure,
+      beer_style,
     });
     res.status(200).json(beer);
   } catch (error) {

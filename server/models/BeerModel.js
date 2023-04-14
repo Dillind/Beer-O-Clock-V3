@@ -9,7 +9,7 @@ const beerSchema = new Schema(
         type: String,
         required: true,
       },
-      brand_url: {
+      image: {
         type: String,
         required: true,
       },
