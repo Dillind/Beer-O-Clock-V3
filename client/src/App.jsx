@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages & components
 import Home from "./pages/Home";
-import FindBeer from './pages/FindBeer'
+import FindBeer from "./pages/FindBeer";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import About from "./pages/About";
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/findbeer" element={<FindBeer />} />
             <Route path="/about" element={<About />} />
+            <Route path="/findbeer" element={<FindBeer />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
