@@ -1,8 +1,9 @@
+import { Container, Typography } from "@mui/material";
 const About = () => {
   return (
-    <div className="about">
-      <h2>About</h2>
-    </div>
+    <Container fixed>
+      <Typography variant="h4">About</Typography>
+    </Container>
   );
 };
 
