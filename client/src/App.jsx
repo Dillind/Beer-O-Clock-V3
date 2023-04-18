@@ -10,9 +10,11 @@ import About from "./pages/About";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
+        {/* Header */}
         <Navbar />
+        {/* Content */}
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -20,6 +22,7 @@ function App() {
             <Route path="/findbeer" element={<FindBeer />} />
           </Routes>
         </div>
+        {/* Footer */}
         <Footer />
       </BrowserRouter>
     </div>
