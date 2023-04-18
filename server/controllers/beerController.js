@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 // get all beers
 const getBeers = async (req, res) => {
-  const beers = await Beer.find({}).sort({ createdAt: -1 }); // descending order (newest at the top)
+  const beers = await Beer.find({}).sort({ createdAt: 1 }); // descending order (newest at the top)
   res.status(200).json(beers);
 };
 
