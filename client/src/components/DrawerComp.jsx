@@ -8,6 +8,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 
 const DrawerComp = ({ links }) => {
@@ -15,11 +16,12 @@ const DrawerComp = ({ links }) => {
   return (
     <>
       <Drawer
+        anchor="top"
         PaperProps={{
           sx: {
             backgroundColor: "#242424",
-            width: "100%",
             alignItems: "center",
+            top: "55px",
           },
         }}
         open={open}
@@ -32,7 +34,6 @@ const DrawerComp = ({ links }) => {
               to={`/${link === "home" ? "" : link}`}
               key={index}
               onClick={() => setOpen(!open)}
-              // sx={{ justifyContent: "center" }}
             >
               <ListItemIcon>
                 <ListItemText sx={{ color: "#fff" }}>
@@ -47,7 +48,7 @@ const DrawerComp = ({ links }) => {
         sx={{ ml: "auto", color: "#fff" }}
         onClick={() => setOpen(!open)}
       >
-        <MenuRoundedIcon />
+        {!open ? <MenuRoundedIcon /> : <CloseIcon />}
       </IconButton>
     </>
   );
