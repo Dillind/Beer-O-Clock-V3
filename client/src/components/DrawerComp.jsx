@@ -15,7 +15,13 @@ const DrawerComp = ({ links }) => {
   return (
     <>
       <Drawer
-        PaperProps={{ sx: { backgroundColor: "#242424" } }}
+        PaperProps={{
+          sx: {
+            backgroundColor: "#242424",
+            width: "100%",
+            alignItems: "center",
+          },
+        }}
         open={open}
         onClose={() => setOpen(false)}
       >
@@ -26,6 +32,7 @@ const DrawerComp = ({ links }) => {
               to={`/${link === "home" ? "" : link}`}
               key={index}
               onClick={() => setOpen(!open)}
+              // sx={{ justifyContent: "center" }}
             >
               <ListItemIcon>
                 <ListItemText sx={{ color: "#fff" }}>
@@ -34,13 +41,6 @@ const DrawerComp = ({ links }) => {
               </ListItemIcon>
             </ListItemButton>
           ))}
-          {/* <ListItemButton onClick={() => setOpen(!open)}>
-            <ListItemIcon>
-              <ListItemText sx={{ color: "#fff" }}>Home</ListItemText>
-              <ListItemText sx={{ color: "#fff" }}>About</ListItemText>
-              <ListItemText sx={{ color: "#fff" }}>Find Beer</ListItemText>
-            </ListItemIcon>
-          </ListItemButton> */}
         </List>
       </Drawer>
       <IconButton
