@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages & components
@@ -7,24 +6,33 @@ import FindBeer from "./pages/FindBeer";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import { ThemeProvider, createTheme } from "@mui/material";
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Inter", "sans-serif"].join(","),
+    },
+  });
+
   return (
     <div className="app">
-      <BrowserRouter>
-        {/* Header */}
-        <Navbar />
-        {/* Content */}
-        <div className="pages">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/findbeer" element={<FindBeer />} />
-          </Routes>
-        </div>
-        {/* Footer */}
-        <Footer />
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          {/* Header */}
+          <Navbar/>
+          {/* Content */}
+          <div className="pages">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/beers" element={<FindBeer />} />
+            </Routes>
+          </div>
+          {/* Footer */}
+          <Footer />
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 }
