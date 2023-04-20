@@ -1,11 +1,11 @@
 /* google font */
 *,
+html,
 :before,
 :after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -14,77 +14,10 @@ body {
   height: 100%;
 }
 
-/* .home,
-.about,
-.find-beer {
-  min-height: 100vh;
-  width: auto;
-} */
-
-
 /* navbar layout */
-header {
-  background: #fff;
-}
-
-header .container {
-  /* max-width: 1400px; */
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-header a {
-  color: #333;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0.25rem;
-}
-
-header ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
-}
-
-header h1 {
-  font-size: 3rem;
-}
-
-/* change it to that underline version in BeerV2 */
-header li:hover {
-  background-color: #999;
-}
-
-.pages {
-  border: 2px solid purple;
-  width: 100%;
-  height: 100vh;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-.beers {
-  border: 2px solid green;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
-.beers-container {
-  display: flex;
-}
-
-/* #country-form {
-  border: 2px solid black;
-  display: flex;
-} */
 
 /* body content layout */
+
+.pages {
+  min-height: 100vh;
+}
