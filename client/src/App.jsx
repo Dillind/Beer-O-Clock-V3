@@ -20,15 +20,13 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           {/* Header */}
-          <Navbar/>
+          <Navbar />
           {/* Content */}
-          <div className="pages">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/beers" element={<FindBeer />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/beers" element={<FindBeer />} />
+          </Routes>
           {/* Footer */}
           <Footer />
         </BrowserRouter>
