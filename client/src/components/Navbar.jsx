@@ -22,7 +22,10 @@ const Navbar = () => {
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const links = ["home", "about", "beers"];
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#242424" }}>
+    <AppBar
+      position="sticky"
+      sx={{ backgroundColor: "#242424", height: "60px" }}
+    >
       <Toolbar>
         {isMatch ? (
           <>
