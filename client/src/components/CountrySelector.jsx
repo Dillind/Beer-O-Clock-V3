@@ -27,18 +27,21 @@ const CountrySelector = ({ beers }) => {
     country ? setBeerCardsVisible(true) : setBeerCardsVisible(false);
   });
 
-  const beerCardContainer = {};
-
   return (
-    <div>
-      <Grid
-        container
-        spacing={2}
-        sx={{ display: "grid", border: "5px solid lime" }}
-      >
-        <Grid item align="center" sx={{ border: "5px solid black" }}>
-          <FormControl sx={{ width: 200 }} id="country-form">
-            <InputLabel id="region-select-label">Country</InputLabel>
+    <>
+      <Grid container align="center">
+        <Grid item xs={12} sx={{ pt: "50px", mb: 1 }}>
+          <Typography
+            variant="h5"
+            component="h2"
+            sx={{ color: "#242424", fontWeight: 800 }}
+          >
+            Select Country:
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sx={{ mb: { xs: "50px", md: "100px" } }}>
+          <FormControl sx={{ width: 200 }}>
+            <InputLabel>Country</InputLabel>
             <Select
               name="country"
               value={country}
@@ -55,17 +58,25 @@ const CountrySelector = ({ beers }) => {
           </FormControl>
         </Grid>
       </Grid>
-      <Grid container >
-        <Grid item sx={{ border: "5px solid yellow" }}>
-          {beerCardsVisible &&
-            beers.map((beer) =>
-              beer.origin === country ? (
+      <Grid
+        container
+        align="center"
+        sx={{
+          justifyContent: "center",
+          pl: { xs: "30px", md: "100px" },
+          pr: { xs: "30px", md: "100px" },
+        }}
+      >
+        {beerCardsVisible &&
+          beers.map((beer) =>
+            beer.origin === country ? (
+              <Grid item sx={{ mb: 1 }} key={beer._id}>
                 <BeerCard key={beer._id} beer={beer} />
-              ) : null
-            )}
-        </Grid>
+              </Grid>
+            ) : null
+          )}
       </Grid>
-    </div>
+    </>
   );
 };
 
