@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import BeerCard from "../components/BeerCard";
 import CountrySelector from "../components/CountrySelector";
+import { Grid } from "@mui/material";
+
 const FindBeer = () => {
   const [beers, setBeers] = useState(null);
 
@@ -18,11 +19,11 @@ const FindBeer = () => {
   }, []);
 
   return (
-    <div className="find-beer">
-      <div className="beers">
+    <Grid container sx={{ minHeight: "100vh" }}>
+      <Grid item xs={12}>
         <CountrySelector beers={beers} />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 
