@@ -10,12 +10,9 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
-  Card,
-  CardContent,
-  CardMedia,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const BeerCard = ({ beer }) => {
   const [open, setOpen] = useState(false);
@@ -39,18 +36,15 @@ const BeerCard = ({ beer }) => {
 
   const boxStyling = {
     position: "fixed",
-    top: "52%",
+    top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: { xs: 500, md: 650, lg: 980 },
-    width: { xs: 300, md: 400, lg: 500 },
+    height: { xs: 700, lg: 980 },
+    width: { xs: 350, lg: 500 },
     maxHeight: "calc(100vh - 210px)",
     overflowY: "auto",
     bgcolor: "background.paper",
-    // border: "2px solid #000",
     borderRadius: "10px",
-    // boxShadow: 24,
-    p: 4,
   };
 
   const rows = [
@@ -65,44 +59,77 @@ const BeerCard = ({ beer }) => {
   ];
 
   return (
-    <Grid container>
-      <Grid item>
-        {beer.brand.image ? (
-          <Card>
-            <Button sx={buttonStyling} variant="text" onClick={handleOpen}>
-              <CardMedia
+    <Grid container justifyContent="center">
+      {beer.brand.image ? (
+        <Grid item>
+          <Button
+            onClick={handleOpen}
+            sx={{
+              "&:hover": {
+                background: "none",
+              },
+            }}
+          >
+            <Box sx={{ maxWidth: "400px" }}>
+              <Box
                 component="img"
-                height="200"
-                image={beer.brand.image}
-                alt={beer.brand.name}
+                src={beer.brand.image}
+                sx={{
+                  boxShadow: `0 2px 14px rgba(0,0,0,.1);`,
+                  mb: "20px",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
               />
-            </Button>
-          </Card>
-        ) : null}
-      </Grid>
-      <Grid container spacing={1}>
+            </Box>
+          </Button>
+        </Grid>
+      ) : null}
+      <Grid container>
         <Modal open={open} onClose={handleClose}>
           <Box sx={boxStyling}>
-            <Grid container>
-              <Grid item xs={12} md={12} sx={{ textAlign: "center" }}>
-                <Typography variant="h4">{beer.brand.name}</Typography>
-              </Grid>
-              <Grid item xs={12} md={12} sx={{ textAlign: "center" }}>
-                <Typography>
-                  <img src={beer.image} alt="Beer Image" width={150} />
+            <Grid
+              container
+              sx={{ justifyContent: "center", alignItems: "center" }}
+            >
+              <Grid item>
+                <Typography
+                  sx={{ pt: 1, fontWeight: 600 }}
+                  variant="h4"
+                  component="h1"
+                >
+                  {beer.brand.name}
                 </Typography>
-                {beer.variation ? <Button>{beer.variation}</Button> : null}
+              </Grid>
+              <Grid item sx={{ position: "absolute", right: 0, top: 0 }}>
+                <Button onClick={handleClose}>
+                  <CloseIcon sx={{ color: "black" }} />
+                </Button>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={12} sx={{ textAlign: "center" }}>
+            <Grid item xs={12} align="center">
+              <img src={beer.image} alt="Beer Image" width="200" />
+              {beer.variation ? (
+                <Grid item xs={12} align="center">
+                  <Button>{beer.variation}</Button>
+                </Grid>
+              ) : null}
+            </Grid>
+            <Grid item xs={12} sx={{ textAlign: "center" }}>
               <Divider variant="middle" sx={{ border: "1px solid black" }} />
               <Typography sx={{ mt: 2 }} variant="h6">
                 About this product:
               </Typography>
-              <Typography variant="body1">{beer.description}</Typography>
+              <Typography sx={{ pl: 3, pr: 3 }} variant="body1">
+                {beer.description}
+              </Typography>
             </Grid>
-            <Grid item xs={12} md={12} sx={{ textAlign: "center" }}>
-              <Typography sx={{ mt: 1, bgcolor: "#999", p: 1 }} variant="h6">
+            <Grid item xs={12} sx={{ textAlign: "center", pl: 2, pr: 2 }}>
+              <Typography
+                sx={{ mt: 1, bgcolor: "#999", p: 1, borderRadius: 2 }}
+                variant="h6"
+              >
                 Product Information
               </Typography>
               <TableContainer>
