@@ -95,7 +95,7 @@ const Home = () => {
               component="h4"
               sx={{ color: "#242424", fontWeight: "800" }}
             >
-              [Placeholder]
+              1. Choose your country
             </Typography>
           </Box>
         </Grid>
