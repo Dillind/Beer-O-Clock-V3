@@ -39,8 +39,8 @@ const CountrySelector = ({ beers }) => {
             Select Country:
           </Typography>
         </Grid>
-        <Grid item xs={12} sx={{ mb: { xs: "50px", md: "100px" } }}>
-          <FormControl sx={{ width: 200 }}>
+        <Grid item xs={12} sx={{ mb: "60px" }}>
+          <FormControl sx={{ width: 200, bgcolor: "#fff", borderRadius: 1 }}>
             <InputLabel>Country</InputLabel>
             <Select
               name="country"
@@ -63,8 +63,6 @@ const CountrySelector = ({ beers }) => {
         align="center"
         sx={{
           justifyContent: "center",
-          pl: { xs: "30px", md: "100px" },
-          pr: { xs: "30px", md: "100px" },
         }}
       >
         {beerCardsVisible &&
