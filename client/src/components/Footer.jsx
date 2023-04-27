@@ -15,10 +15,10 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid container spacing={1} direction="column" alignItems="center">
           <Grid item xs={12}>
-            <Link to="https://github.com/Dillind">
+            <Link to="https://github.com/Dillind" target="_blank">
               <GitHubIcon fontSize="large" sx={{ color: "#fff" }} />
             </Link>
-            <Link to="https://www.linkedin.com/in/dylan-lindsay/">
+            <Link to="https://www.linkedin.com/in/dylan-lindsay/" target="_blank">
               <LinkedInIcon fontSize="large" color="primary" />
             </Link>
           </Grid>
