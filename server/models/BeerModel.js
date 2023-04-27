@@ -58,6 +58,20 @@ const beerSchema = new Schema(
       type: String,
       required: true,
     },
+    retailers: {
+      dan_murphys: {
+        type: String,
+        required: false,
+      },
+      bws: {
+        type: String,
+        required: false,
+      },
+      liquorland: {
+        type: String,
+        required: false,
+      },
+    },
   },
   { timestamps: true }
 );
