@@ -13,6 +13,9 @@ import {
   TableRow,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import DanMurphy from "../images/danmurphys-logo.png";
+import BWS from "../images/bws-logo.png";
+import Liquorland from "../images/liquorland-logo.png";
 
 const BeerCard = ({ beer }) => {
   const [open, setOpen] = useState(false);
@@ -28,19 +31,13 @@ const BeerCard = ({ beer }) => {
     return { title, value };
   };
 
-  const buttonStyling = {
-    "&:hover": {
-      background: "none",
-    },
-  };
-
   const boxStyling = {
     position: "fixed",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: { xs: 700, lg: 980 },
-    width: { xs: 350, lg: 500 },
+    height: { xs: 700, sm: 800, md: 900 },
+    width: { xs: 350, sm: 400, md: 500 },
     maxHeight: "calc(100vh - 210px)",
     overflowY: "auto",
     bgcolor: "background.paper",
@@ -74,6 +71,7 @@ const BeerCard = ({ beer }) => {
               <Box
                 component="img"
                 src={beer.brand.image}
+                alt={beer.brand.name}
                 sx={{
                   boxShadow: `0 2px 14px rgba(0,0,0,.1);`,
                   mb: "20px",
@@ -108,14 +106,21 @@ const BeerCard = ({ beer }) => {
                 </Button>
               </Grid>
             </Grid>
-            <Grid item xs={12} align="center">
-              <img src={beer.image} alt="Beer Image" width="200" />
-              {beer.variation ? (
-                <Grid item xs={12} align="center">
-                  <Button>{beer.variation}</Button>
-                </Grid>
-              ) : null}
+            <Grid container item align="center">
+              <Grid item xs>
+                <Box
+                  component="img"
+                  src={beer.image}
+                  alt="Beer Image"
+                  width="200px"
+                />
+              </Grid>
             </Grid>
+            {beer.variation ? (
+              <Grid item xs={12} align="center">
+                <Button>{beer.variation}</Button>
+              </Grid>
+            ) : null}
             <Grid item xs={12} sx={{ textAlign: "center" }}>
               <Divider variant="middle" sx={{ border: "1px solid black" }} />
               <Typography sx={{ mt: 2 }} variant="h6">
@@ -137,7 +142,7 @@ const BeerCard = ({ beer }) => {
                   <TableBody>
                     {rows.map((row) => (
                       <TableRow key={row.title}>
-                        <TableCell variant="head" sx={{ fontWeight: "bold" }}>
+                        <TableCell variant="head" sx={{ fontWeight: "800" }}>
                           {row.title}
                         </TableCell>
                         <TableCell align="center">{row.value}</TableCell>
@@ -146,6 +151,57 @@ const BeerCard = ({ beer }) => {
                   </TableBody>
                 </Table>
               </TableContainer>
+            </Grid>
+            <Grid item xs>
+              <Typography variant="h6" sx={{ textAlign: "center", mt: 1 }}>
+                Shop Now:
+              </Typography>
+              <Box
+                justifyContent="center"
+                display="flex"
+                alignItems="flex-start"
+              >
+                {beer.retailers.dan_murphys ? (
+                  <Button>
+                    <a href={beer.retailers.dan_murphys} target="_blank">
+                      <Box
+                        component="img"
+                        src={DanMurphy}
+                        alt="Dan Murphys Logo"
+                        maxWidth="50px"
+                        sx={{ borderRadius: "4px" }}
+                      />
+                    </a>
+                  </Button>
+                ) : null}
+
+                {beer.retailers.bws ? (
+                  <Button>
+                    <a href={beer.retailers.bws} target="_blank">
+                      <Box
+                        component="img"
+                        src={BWS}
+                        alt="BWS Logo"
+                        maxWidth="50px"
+                        sx={{ borderRadius: "4px" }}
+                      />
+                    </a>
+                  </Button>
+                ) : null}
+                {beer.retailers.liquorland ? (
+                  <Button>
+                    <a href={beer.retailers.liquorland} target="_blank">
+                      <Box
+                        component="img"
+                        src={Liquorland}
+                        alt="Liquorland Logo"
+                        maxWidth="50px"
+                        sx={{ borderRadius: "4px" }}
+                      />
+                    </a>
+                  </Button>
+                ) : null}
+              </Box>
             </Grid>
           </Box>
         </Modal>
