@@ -1,8 +1,10 @@
 import { Grid, Typography, Button, Box } from "@mui/material";
 import BackgroundBeer from "../images/beer-bg-sm.jpg";
 import BeerFriends from "../images/beer-image-5.jpg";
-import BeerSelection from "../images/beer-image-7.jpg";
+import CountryGlobe from "../images/beer-image-1.jpg";
+import BeerSelection from "../images/beer-image-2.jpg";
 import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <Grid
@@ -75,7 +77,7 @@ const Home = () => {
         sx={{
           textAlign: "center",
           alignItems: "center",
-          minHeight: "50vh",
+          minHeight: "60vh",
           p: "30px",
         }}
       >
@@ -83,7 +85,7 @@ const Home = () => {
           <Box sx={{ textAlign: "center", maxWidth: "350px" }}>
             <Box
               component="img"
-              src={BeerFriends}
+              src={CountryGlobe}
               sx={{
                 boxShadow: `0 2px 14px rgba(0,0,0,.5);`,
                 width: "100%",
@@ -95,7 +97,7 @@ const Home = () => {
               component="h4"
               sx={{ color: "#242424", fontWeight: "800" }}
             >
-              1. Choose your country
+              Select your country
             </Typography>
           </Box>
         </Grid>
@@ -115,7 +117,7 @@ const Home = () => {
               component="h4"
               sx={{ color: "#242424", fontWeight: "800" }}
             >
-              [Placeholder]
+              Find a beer
             </Typography>
           </Box>
         </Grid>
@@ -135,7 +137,7 @@ const Home = () => {
               component="h4"
               sx={{ color: "#242424", fontWeight: "800" }}
             >
-              [Placeholder]
+              Enjoy!
             </Typography>
           </Box>
         </Grid>
