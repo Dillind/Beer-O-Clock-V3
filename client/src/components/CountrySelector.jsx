@@ -6,11 +6,12 @@ import {
   Typography,
   Select,
   MenuItem,
+  CircularProgress,
 } from "@mui/material";
 
 import BeerCard from "./BeerCard";
 
-const CountrySelector = ({ beers }) => {
+const CountrySelector = ({ beers, loading }) => {
   const [country, setCountry] = useState("");
   const [beerCardsVisible, setBeerCardsVisible] = useState(false);
 
@@ -19,12 +20,11 @@ const CountrySelector = ({ beers }) => {
     switch (name) {
       case "country":
         setCountry(value);
-        console.log(value);
     }
   };
 
   useEffect(() => {
-    country ? setBeerCardsVisible(true) : setBeerCardsVisible(false);
+    country && loading ? setBeerCardsVisible(true) : setBeerCardsVisible(false);
   });
 
   return (
