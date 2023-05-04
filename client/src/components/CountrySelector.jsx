@@ -11,7 +11,7 @@ import {
 
 import BeerCard from "./BeerCard";
 
-const CountrySelector = ({ beers, loading }) => {
+const CountrySelector = ({ beers }) => {
   const [country, setCountry] = useState("");
   const [beerCardsVisible, setBeerCardsVisible] = useState(false);
 
@@ -24,7 +24,7 @@ const CountrySelector = ({ beers, loading }) => {
   };
 
   useEffect(() => {
-    country && loading ? setBeerCardsVisible(true) : setBeerCardsVisible(false);
+    country ? setBeerCardsVisible(true) : setBeerCardsVisible(false);
   });
 
   return (
