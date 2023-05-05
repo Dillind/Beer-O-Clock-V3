@@ -56,7 +56,7 @@ const FindBeer = () => {
               sx={{
                 color: "#fecc1a",
                 pt: 1,
-                animation: `${spin} 2s infinite ease`,
+                animation: `${spin} 1s infinite ease`,
               }}
               fontSize="large"
             />
