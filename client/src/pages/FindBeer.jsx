@@ -9,19 +9,13 @@ const FindBeer = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchBeers = async () => {
-    try {
-      const response = await fetch(
-        "https://beerapi-backend-dillind.onrender.com/beers"
-        // "http://localhost:4000/beers"
-      );
-      const json = await response.json();
-      if (response.ok) {
-        setBeers(json);
-      }
-      setLoading(true);
-    } catch (e) {
-      console.log(e);
-    }
+    const response = await fetch(
+      "https://beerapi-backend-dillind.onrender.com/beers"
+      // "http://localhost:4000/beers"
+    );
+    const data = await response.json();
+    setBeers(data);
+    setLoading(true);
   };
 
   useEffect(() => {

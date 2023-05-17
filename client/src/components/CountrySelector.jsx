@@ -6,7 +6,6 @@ import {
   Typography,
   Select,
   MenuItem,
-  CircularProgress,
 } from "@mui/material";
 
 import BeerCard from "./BeerCard";
